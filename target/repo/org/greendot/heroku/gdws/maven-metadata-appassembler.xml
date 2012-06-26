@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.greendot.heroku</groupId>
+  <artifactId>gdws</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20120626212611</lastUpdated>
+  </versioning>
+</metadata>
