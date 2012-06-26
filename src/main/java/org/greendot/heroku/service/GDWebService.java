@@ -13,5 +13,5 @@ import javax.ejb.Remote;
 public interface GDWebService {
 
 	Object getCardInfo(String cardnumberinput);
-	Object getCustomerInfo(String firstnameinput, String lastnameinput);
+	Object getCustomerByActNum(Integer customerKey);
 }
