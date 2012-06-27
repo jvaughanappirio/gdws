@@ -43,7 +43,7 @@ public class GDWebServiceImp implements GDWebService {
 	}
 	
 	@WebMethod(operationName = "getQMaster")
-	public QMaster getQMasterTable(@WebParam(name = "QMasterKey") Integer QMasterKey)
+	public QMaster getQMasterTable(@WebParam(name = "QMasterKey") Long QMasterKey)
 	{
 		try {
 			QMaster qm = new QMaster();
@@ -73,7 +73,7 @@ public class GDWebServiceImp implements GDWebService {
 	}
 	
 	@WebMethod(operationName = "getCustomerValidation")
-	public CustomerInformation getCustomerByActNum(@WebParam(name = "CustomerKey") Integer CustomerKey)
+	public CustomerInformation getCustomerByActNum(@WebParam(name = "CustomerKey") Long CustomerKey)
 	{
 		try {
 			CustomerInformation Customer = new CustomerInformation();
