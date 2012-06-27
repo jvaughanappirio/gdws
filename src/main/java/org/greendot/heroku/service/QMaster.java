@@ -11,7 +11,7 @@ import java.util.Date;
 public class QMaster
 {	
 	@XmlElement(name="QMasterKey")
-	public Long QMasterKey;
+	public Double QMasterKey;
 
 	@XmlElement(name="CreateDate")
 	public Date CreateDate;

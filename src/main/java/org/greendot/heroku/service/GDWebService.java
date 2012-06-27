@@ -13,6 +13,6 @@ import javax.ejb.Remote;
 public interface GDWebService {
 
 	Object getCardInfo(String cardnumberinput);
-	Object getCustomerByActNum(Long customerKey);
-	Object getQMasterTable(Long qMasterKey);
+	Object getCustomerByActNum(Double customerKey);
+	Object getQMasterTable(Double qMasterKey);
 }
