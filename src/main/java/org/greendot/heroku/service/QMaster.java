@@ -26,31 +26,31 @@ public class QMaster
 	public String PIN;
 
 	@XmlElement(name="LanguageKey")
-	public Integer LanguageKey;
+	public Double LanguageKey;
 
 	@XmlElement(name="PinKey")
-	public Integer PinKey;
+	public Double PinKey;
 
 	@XmlElement(name="IVRAuditHdrKey")
-	public Integer IVRAuditHdrKey;
+	public Double IVRAuditHdrKey;
 
 	@XmlElement(name="QMasterCallTypeKey")
-	public Integer QMasterCallTypeKey;
+	public Double QMasterCallTypeKey;
 
 	@XmlElement(name="CustomerKey")
-	public Integer CustomerKey;
+	public Double CustomerKey;
 
 	@XmlElement(name="QMasterExitKey")
-	public Integer QMasterExitKey;
+	public Double QMasterExitKey;
 
 	@XmlElement(name="OfferCode")
 	public String OfferCode;
 
 	@XmlElement(name="VirtualPilot")
-	public Integer VirtualPilot;
+	public Double VirtualPilot;
 
 	@XmlElement(name="QMasterScriptKey")
-	public Integer QMasterScriptKey;
+	public Double QMasterScriptKey;
 
 	@XmlElement(name="UsherScript")
 	public String UsherScript;

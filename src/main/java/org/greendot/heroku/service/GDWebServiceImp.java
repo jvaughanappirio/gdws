@@ -52,15 +52,15 @@ public class GDWebServiceImp implements GDWebService {
 			qm.Queue = "Queue";
 			qm.SerialNbr = "SerialNumber1234";
 			qm.PIN = "54321";
-			qm.LanguageKey = 1111;
-			qm.PinKey = 2222;
-			qm.IVRAuditHdrKey = 3333;
-			qm.QMasterCallTypeKey = 4444;
-			qm.CustomerKey = 5555;
-			qm.QMasterExitKey = 6666;
+			qm.LanguageKey = 1111.00;
+			qm.PinKey = 2222.00;
+			qm.IVRAuditHdrKey = 3333.00;
+			qm.QMasterCallTypeKey = 4444.00;
+			qm.CustomerKey = 5555.00;
+			qm.QMasterExitKey = 6666.00;
 			qm.OfferCode = "OfferCode";
-			qm.VirtualPilot = 7777;
-			qm.QMasterScriptKey = 8888;
+			qm.VirtualPilot = 7777.00;
+			qm.QMasterScriptKey = 8888.00;
 			qm.UsherScript = "UsherScript";
 			return qm;
 		}
