@@ -30,7 +30,7 @@ public class CustomerInformation
 	*/
 	
 	@XmlElement(name="CustomerKey")
-	public Integer CustomerKey;
+	public Double CustomerKey;
 	
 	@XmlElement(name="ActivationNumber")
 	public String ActivationNumber;
@@ -105,7 +105,7 @@ public class CustomerInformation
 	public String TSysLoadAmount;
 	
 	@XmlElement(name="ActivationStatusKey")
-	public Integer ActivationStatusKey;
+	public Double ActivationStatusKey;
 	
 	@XmlElement(name="DocsInSpanish")
 	public Boolean DocsInSpanish;
@@ -114,7 +114,7 @@ public class CustomerInformation
 	public Boolean SendDocs;
 	
 	@XmlElement(name="ProductKey")
-	public Integer ProductKey;
+	public Double ProductKey;
 	
 	@XmlElement(name="CreateDate")
 	public Date CreateDate;
@@ -144,19 +144,19 @@ public class CustomerInformation
 	public Boolean RushPlastics;
 	
 	@XmlElement(name="SysUserKey")
-	public Integer SysUserKey;
+	public Double SysUserKey;
 	
 	@XmlElement(name="OrigAcctNbr")
 	public String OrigAcctNbr;
 	
 	@XmlElement(name="UpgradeEligKey")
-	public Integer UpgradeEligKey;
+	public Double UpgradeEligKey;
 	
 	@XmlElement(name="UpgradeOfExisting")
 	public Boolean UpgradeOfExisting;
 	
 	@XmlElement(name="UpgradeCustPtr")
-	public Integer UpgradeCustPtr;
+	public Double UpgradeCustPtr;
 	
 	@XmlElement(name="CreditRatingKey")
 	public String CreditRatingKey;
@@ -174,7 +174,7 @@ public class CustomerInformation
 	public Date CurrBalanceAsOf;
 	
 	@XmlElement(name="TermsSourceKey")
-	public Integer TermsSourceKey;
+	public Double TermsSourceKey;
 	
 	@XmlElement(name="FirstUsed")
 	public Date FirstUsed;
@@ -189,7 +189,7 @@ public class CustomerInformation
 	public Boolean ATMGenerated;
 	
 	@XmlElement(name="RealCreditEligKey")
-	public Integer RealCreditEligKey;
+	public Double RealCreditEligKey;
 	
 	@XmlElement(name="ReplacementCard")
 	public Boolean ReplacementCard;
@@ -210,10 +210,10 @@ public class CustomerInformation
 	public String ResidentialZipcode;
 	
 	@XmlElement(name="ReloadWarningStatusKey")
-	public Integer ReloadWarningStatusKey;
+	public Double ReloadWarningStatusKey;
 	
 	@XmlElement(name="ActivationSysUserKey")
-	public Integer ActivationSysUserKey;
+	public Double ActivationSysUserKey;
 	
 	@XmlElement(name="PasswordHint")
 	public String PasswordHint;
@@ -231,7 +231,7 @@ public class CustomerInformation
 	public String StateIDState;
 	
 	@XmlElement(name="ACHActivationEligKey")
-	public Integer ACHActivationEligKey;
+	public Double ACHActivationEligKey;
 	
 	@XmlElement(name="ParentSSN")
 	public String ParentSSN;
@@ -255,7 +255,7 @@ public class CustomerInformation
 	public String ParentDriversLicenseState;
 	
 	@XmlElement(name="AccountKey")
-	public Integer AccountKey;
+	public Double AccountKey;
 	
 	@XmlElement(name="UserExternalId")
 	public String UserExternalId;
@@ -273,7 +273,7 @@ public class CustomerInformation
 	public Date Card2DOB;
 	
 	@XmlElement(name="PlasticIssueTypeKey")
-	public Integer PlasticIssueTypeKey;
+	public Double PlasticIssueTypeKey;
 	
 	@XmlElement(name="PassportCountry")
 	public String PassportCountry;
@@ -285,7 +285,7 @@ public class CustomerInformation
 	public String CellPhone;
 	
 	@XmlElement(name="ReminderQuestionKey")
-	public Integer ReminderQuestionKey;
+	public Double ReminderQuestionKey;
 	
 	@XmlElement(name="ReminderAnswer")
 	public String ReminderAnswer;
@@ -315,7 +315,7 @@ public class CustomerInformation
 	public Date LastOnUsActivity;
 	
 	@XmlElement(name="OrderKey")
-	public Integer OrderKey;
+	public Double OrderKey;
 	
 	@XmlElement(name="PinReference")
 	public String PinReference;
