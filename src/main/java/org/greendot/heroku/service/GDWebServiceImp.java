@@ -50,7 +50,7 @@ public class GDWebServiceImp implements GDWebService {
 			qm.QMasterKey = QMasterKey;
 			if (QMasterKey == 4.155551212E9) 	qm.ResponseCode = "Activate";
 			else if (QMasterKey == 4.155552323E9) qm.ResponseCode = "Denied";
-			else qm.ResponseCode = "NotFunded";
+			else qm.ResponseCode = "Invalid";
 
 			qm.CreateDate = new Date();
 			qm.Queue = "Queue";
