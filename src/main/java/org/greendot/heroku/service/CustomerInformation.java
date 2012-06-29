@@ -93,7 +93,7 @@ public class CustomerInformation
 	public String Card2LastName;
 	
 	@XmlElement(name="DOB")
-	public Date DOB;
+	public String DOB;
 	
 	@XmlElement(name="ParentFirstName")
 	public String ParentFirstName;
@@ -237,7 +237,7 @@ public class CustomerInformation
 	public String ParentSSN;
 	
 	@XmlElement(name="ParentDOB")
-	public Date ParentDOB;
+	public String ParentDOB;
 	
 	@XmlElement(name="LastRefresh")
 	public Date LastRefresh;
@@ -270,7 +270,7 @@ public class CustomerInformation
 	public Boolean IsPrimaryAccountHolder;
 	
 	@XmlElement(name="Card2DOB")
-	public Date Card2DOB;
+	public String Card2DOB;
 	
 	@XmlElement(name="PlasticIssueTypeKey")
 	public Double PlasticIssueTypeKey;

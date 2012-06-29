@@ -12,6 +12,9 @@ public class QMaster
 {	
 	@XmlElement(name="QMasterKey")
 	public Double QMasterKey;
+	
+	@XmlElement(name="ResponseCode")
+	public String ResponseCode;
 
 	@XmlElement(name="CreateDate")
 	public Date CreateDate;

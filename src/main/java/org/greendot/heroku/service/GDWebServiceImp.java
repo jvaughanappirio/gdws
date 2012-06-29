@@ -48,6 +48,7 @@ public class GDWebServiceImp implements GDWebService {
 		try {
 			QMaster qm = new QMaster();
 			qm.QMasterKey = QMasterKey;
+			qm.ResponseCode = "Activate";
 			qm.CreateDate = new Date();
 			qm.Queue = "Queue";
 			qm.SerialNbr = "SerialNumber1234";
@@ -72,7 +73,7 @@ public class GDWebServiceImp implements GDWebService {
 		}
 	}
 	
-	@WebMethod(operationName = "getCustomerValidation")
+	@WebMethod(operationName = "getCustomerByActNum")
 	public CustomerInformation getCustomerByActNum(@WebParam(name = "CustomerKey") Double CustomerKey)
 	{
 		try {
@@ -98,7 +99,7 @@ public class GDWebServiceImp implements GDWebService {
 			Customer.Email = "Email@Email.Com";
 			Customer.Card2FirstName = "Card2FirstName";
 			Customer.Card2LastName = "Card2LastName";
-			Customer.DOB = new Date();
+			Customer.DOB = "07/14/1983";
 			Customer.ParentFirstName = "ParentFirstName";
 			Customer.ParentLastName ="ParentLastName";
 			Customer.TSysLoadAmount ="TSysLoadAmount";
@@ -146,7 +147,7 @@ public class GDWebServiceImp implements GDWebService {
 			Customer.StateIDState = "";
 			Customer.ACHActivationEligKey = 8.00;
 			Customer.ParentSSN = "";
-			Customer.ParentDOB = new Date();
+			Customer.ParentDOB = "09/05/1654";
 			Customer.LastRefresh = new Date();
 			Customer.TaxID = "";
 			Customer.PassportNumber = "";
@@ -157,7 +158,7 @@ public class GDWebServiceImp implements GDWebService {
 			Customer.UserVersionId = "";
 			Customer.IsTsysPrepaidCustomerAccount = false;
 			Customer.IsPrimaryAccountHolder = false;
-			Customer.Card2DOB = new Date();
+			Customer.Card2DOB = "01/02/1903";
 			Customer.PlasticIssueTypeKey = 9.00;
 			Customer.PassportCountry = "";
 			Customer.MonthlyStatements = false;
