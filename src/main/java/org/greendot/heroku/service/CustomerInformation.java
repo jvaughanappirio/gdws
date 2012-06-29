@@ -9,26 +9,6 @@ import java.util.Date;
 @XmlRootElement(name="CustomerInformation")
 public class CustomerInformation
 {
-	
-	/*@XmlElement(name="PassFailNPNROPACOOW")
-	public String PassFailNPNROPACOOW;
-	
-	@XmlElement(name="OOWQuiz")
-	public String OOWQuiz;
-	
-	@XmlElement(name="OOWQuizChoices")
-	public String OOWQuizChoices;
-	
-	@XmlElement(name="OOWQuizID")
-	public String OOWQuizID;
-	
-	@XmlElement(name="OOWQuizSequence")
-	public String OOWQuizSequence;
-	
-	@XmlElement(name="TransactionID")
-	public String TransactionID;
-	*/
-	
 	@XmlElement(name="CustomerKey")
 	public Double CustomerKey;
 	
