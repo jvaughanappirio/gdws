@@ -55,7 +55,7 @@ public class GDWebServiceImp implements GDWebService {
 			qm.CreateDate = new Date();
 			qm.Queue = "Queue";
 			qm.SerialNbr = "SerialNumber1234";
-			qm.PIN = "54321";
+			qm.PIN = "987654321";
 			qm.LanguageKey = 1111.00;
 			qm.PinKey = 2222.00;
 			qm.IVRAuditHdrKey = 3333.00;
@@ -81,7 +81,7 @@ public class GDWebServiceImp implements GDWebService {
 	{
 		try {
 			CustomerInformation Customer = new CustomerInformation();
-			Customer.CustomerKey = 1234.00;
+			Customer.CustomerKey = CustomerKey;
 			Customer.ActivationNumber = "ActivationNumber";
 			Customer.CardReference = "CardReference";
 			Customer.CardExpDate = new Date();

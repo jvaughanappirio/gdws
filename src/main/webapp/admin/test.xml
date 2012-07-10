@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<roseindia>
+
+  <employee>
+  <name>Sandeep Kumar Suman</name>
+  <date-of-birth>15-02-84</date-of-birth>
+  <city>Gorakhpur</city>
+  </employee>
+
+  <employee>
+  <name>Amit Raghuvanshi</name>
+  <date-of-birth>19-12-86</date-of-birth>
+  <city>Lucknow</city>
+  </employee>
+
+  <employee>
+  <name>Vineet Bansal</name>
+  <date-of-birth>05-02-83</date-of-birth>
+  <city>Sonipat</city>
+  </employee>
+
+  <employee>
+  <name>Vikas Singh</name>
+  <date-of-birth>05-12-88</date-of-birth>
+  <city>Hazipur</city>
+  </employee>
+
+  <employee>
+  <name>Anusmita Singh</name>
+  <date-of-birth>28-12-84</date-of-birth>
+  <city>Bareilly</city>
+  </employee>
+
+</roseindia>

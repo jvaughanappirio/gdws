@@ -1,6 +1,10 @@
 package org.greendot.heroku.jetty;
 
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.Handler;
+import org.eclipse.jetty.server.handler.ContextHandler;
+import org.eclipse.jetty.server.handler.HandlerList;
+import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.webapp.WebAppContext;
 public class JettyServer {
 	  /**
@@ -19,9 +23,19 @@ public class JettyServer {
         Server server = new Server(Integer.valueOf(webPort));
         WebAppContext root = new WebAppContext();
 
-        root.setContextPath("/");
+        root.setContextPath("/WebService");
         root.setDescriptor(webappDirLocation+"/WEB-INF/web.xml");
         root.setResourceBase(webappDirLocation);
+
+				WebAppContext jsp = new WebAppContext();
+				
+				//jsp = new WebAppContext(webappDirLocation, "/webapp");
+				
+				jsp.setContextPath("/admin");
+				jsp.setResourceBase(webappDirLocation+"admin/");
+				
+				HandlerList handlers = new HandlerList();
+				handlers.setHandlers(new Handler[] { root, jsp });
         
         //Parent loader priority is a class loader setting that Jetty accepts.
         //By default Jetty will behave like most web containers in that it will
@@ -30,7 +44,7 @@ public class JettyServer {
         //Read more here: http://wiki.eclipse.org/Jetty/Reference/Jetty_Classloading
         root.setParentLoaderPriority(true);
         
-        server.setHandler(root);
+        server.setHandler(handlers);
         
         server.start();
         server.join();   

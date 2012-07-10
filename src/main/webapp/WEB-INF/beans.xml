@@ -22,6 +22,5 @@
 
 	<jaxws:endpoint id="gdws"
 		implementor="org.greendot.heroku.service.GDWebServiceImp" address="/GDWebService" />
-	
 
 </beans>
