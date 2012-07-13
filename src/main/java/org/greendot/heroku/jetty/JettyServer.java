@@ -21,21 +21,24 @@ public class JettyServer {
         }
 
         Server server = new Server(Integer.valueOf(webPort));
-        WebAppContext root = new WebAppContext();
-
-        root.setContextPath("/WebService");
-        root.setDescriptor(webappDirLocation+"/WEB-INF/web.xml");
-        root.setResourceBase(webappDirLocation);
+        
+				WebAppContext root = new WebAppContext();
+				root.setContextPath("/WebService");
+				root.setDescriptor(webappDirLocation+"/WEB-INF/web.xml");
+				root.setResourceBase(webappDirLocation);
 
 				WebAppContext jsp = new WebAppContext();
-				
-				//jsp = new WebAppContext(webappDirLocation, "/webapp");
-				
 				jsp.setContextPath("/admin");
 				jsp.setResourceBase(webappDirLocation+"admin/");
 				
+				WebAppContext servlet = new WebAppContext();
+				servlet.setContextPath("/servlet");
+        servlet.setDescriptor(webappDirLocation+"/WEB-INF/servlet.xml");
+        servlet.setResourceBase(webappDirLocation);
+
+
 				HandlerList handlers = new HandlerList();
-				handlers.setHandlers(new Handler[] { root, jsp });
+				handlers.setHandlers(new Handler[] { root, jsp, servlet });
         
         //Parent loader priority is a class loader setting that Jetty accepts.
         //By default Jetty will behave like most web containers in that it will

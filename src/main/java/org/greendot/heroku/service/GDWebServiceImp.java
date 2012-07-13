@@ -16,12 +16,29 @@ import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
-import java.util.Date;
+import java.util.*;
+import java.text.*;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+import java.io.File;
+
+import org.joda.time.*;
+import org.joda.time.format.*;
+
+import java.lang.Object;
+import java.lang.reflect.Field;
 
 @WebService
 @Stateless
 
 public class GDWebServiceImp implements GDWebService {
+	
+	private File XmlFile;
 
 	@WebMethod(operationName = "getCardInfo")
 	public CardInformation getCardInfo(@WebParam(name = "cardnumber") String cardnumber) {
@@ -44,6 +61,48 @@ public class GDWebServiceImp implements GDWebService {
 	
 	@WebMethod(operationName = "getQMaster")
 	public QMaster getQMasterTable(@WebParam(name = "QMasterKey") Double QMasterKey)
+	{
+			try {
+				String classname="QMaster";
+
+				Class classintance = Class.forName("org.greendot.heroku.service." + classname);
+				Field[] fieldlist = classintance.getFields();
+				QMaster o = (QMaster)classintance.newInstance();
+
+				o = (QMaster)getObjectBuild(classname, fieldlist, o);
+
+				return o;
+			}
+			catch (Exception ex)
+			{
+				ex.printStackTrace();
+				return null;
+			}
+		}
+	
+	@WebMethod(operationName = "getCustomerByActNum")
+	public CustomerInformation getCustomerByActNum(@WebParam(name = "CustomerKey") Double CustomerKey)
+	{
+		try {
+			String classname="CustomerInformation";
+			
+			Class classintance = Class.forName("org.greendot.heroku.service." + classname);
+			Field[] fieldlist = classintance.getFields();
+			CustomerInformation o = (CustomerInformation)classintance.newInstance();
+			
+			o = (CustomerInformation)getObjectBuild(classname, fieldlist, o);
+			
+			return o;
+		}
+		catch (Exception ex)
+		{
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
+	/*@WebMethod(operationName = "getQMasterOld")
+	public QMaster getQMasterTableOld(@WebParam(name = "QMasterKey") Double QMasterKey)
 	{
 		try {
 			QMaster qm = new QMaster();
@@ -186,7 +245,7 @@ public class GDWebServiceImp implements GDWebService {
 		{
 			return null;
 		}
-	}
+	}*/
 	
 	@WebMethod(operationName = "getQuizValidationStepOne")
 	public String getQuizValidationStepOne()
@@ -229,6 +288,50 @@ public class GDWebServiceImp implements GDWebService {
 		}
 		catch (Exception ex) {
 			return false;
+		}
+	}
+	
+	private static String getTagValue(String sTag, Element eElement) {
+		NodeList nlList = eElement.getElementsByTagName(sTag).item(0).getChildNodes();
+
+		Node nValue = (Node) nlList.item(0);
+
+		return nValue.getNodeValue();
+	}
+	
+	private static Object getObjectBuild (String classname, Field[] fieldlist, Object o) {
+		try {
+			File XmlFile = new File("src/main/webapp/admin/object/"+classname+".xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(XmlFile);
+			doc.getDocumentElement().normalize();
+			NodeList nList = doc.getElementsByTagName("fieldset");
+		
+			DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+
+				Node nNode = nList.item(temp);
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+					Element eElement = (Element) nNode;
+		
+					for (int i  = 0; i < fieldlist.length; i++) {
+						Field fld = fieldlist[i];
+						if (fld.getType().toString().equals("class java.lang.String")) fld.set(o, getTagValue(fld.getName(), eElement));
+						else if (fld.getType().toString().equals("class java.lang.Double")) fld.set(o, Double.valueOf(getTagValue(fld.getName(), eElement)));
+						else if (fld.getType().toString().equals("class java.util.Date")) fld.set(o, formatter.parse(getTagValue(fld.getName(), eElement)));
+						else if (fld.getType().toString().equals("class java.lang.Boolean")) fld.set(o, Boolean.valueOf(getTagValue(fld.getName(), eElement)));
+					}
+				}
+			}
+			return o;
+		}
+		catch (Exception ex)
+		{
+			ex.printStackTrace();
+			return null;
 		}
 	}
 }

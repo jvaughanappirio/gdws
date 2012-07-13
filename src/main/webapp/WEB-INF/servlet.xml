@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+
+<web-app>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>WEB-INF/beans.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>WriteXml</servlet-name>
+		<display-name>WriteXml</display-name>
+		<servlet-class>org.greendot.heroku.servlet.WriteXml</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WriteXml</servlet-name>
+		<url-pattern>/WriteXml</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CreateClassXml</servlet-name>
+		<display-name>CreateClassXml</display-name>
+		<servlet-class>org.greendot.heroku.servlet.CreateClassXml</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CreateClassXml</servlet-name>
+		<url-pattern>/CreateClassXml</url-pattern>
+	</servlet-mapping>
+</web-app>
