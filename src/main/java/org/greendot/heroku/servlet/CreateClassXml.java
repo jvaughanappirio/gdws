@@ -71,6 +71,7 @@ public class CreateClassXml extends HttpServlet {
 				else if (fld.getType().toString().equals("class java.lang.Double")) element.appendChild(doc.createTextNode("1111.00"));
 				else if (fld.getType().toString().equals("class java.util.Date")) element.appendChild(doc.createTextNode("01/01/01"));
 				else if (fld.getType().toString().equals("class java.lang.Boolean")) element.appendChild(doc.createTextNode("true"));
+				else if (fld.getType().toString().equals("class java.lang.Integer")) element.appendChild(doc.createTextNode("1111"));
 				else element.appendChild(doc.createTextNode(fld.getType().toString()));
 				fieldsetelement.appendChild(element);
 			}

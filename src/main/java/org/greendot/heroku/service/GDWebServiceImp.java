@@ -40,18 +40,19 @@ public class GDWebServiceImp implements GDWebService {
 	@WebMethod(operationName = "getCardInfo")
 	public CardInformation getCardInfo(@WebParam(name = "cardnumber") String cardnumber) {
 		try {
-			CardInformation ci = new CardInformation();
-			ci.CardNumber = cardnumber;
-			ci.isActivateable = true;
-			ci.PIN = "1234";
-			ci.CCV = "987";
-			ci.TestStrings = new String[2];
-			ci.TestStrings[0] = "Test1";
-			ci.TestStrings[1] = "Test2";
-			return ci;
+			String classname="CardInformation";
+
+			Class classintance = Class.forName("org.greendot.heroku.service." + classname);
+			Field[] fieldlist = classintance.getFields();
+			CardInformation o = (CardInformation)classintance.newInstance();
+
+			o = (CardInformation)getObjectBuild(classname, fieldlist, o);
+
+			return o;
 		}
 		catch (Exception ex)
 		{
+			ex.printStackTrace();
 			return null;
 		}
 	}
@@ -242,6 +243,25 @@ public class GDWebServiceImp implements GDWebService {
 		{
 			return null;
 		}
+	}
+	
+	@WebMethod(operationName = "getCardInfo")
+	public CardInformation getCardInfo(@WebParam(name = "cardnumber") String cardnumber) {
+		try {
+			CardInformation ci = new CardInformation();
+			ci.CardNumber = cardnumber;
+			ci.isActivateable = true;
+			ci.PIN = "1234";
+			ci.CCV = "987";
+			ci.TestStrings = new String[2];
+			ci.TestStrings[0] = "Test1";
+			ci.TestStrings[1] = "Test2";
+			return ci;
+		}
+		catch (Exception ex)
+		{
+			return null;
+		}
 	}*/
 	
 	@WebMethod(operationName = "getQuizValidationStepOne")
@@ -320,6 +340,7 @@ public class GDWebServiceImp implements GDWebService {
 						else if (fld.getType().toString().equals("class java.lang.Double")) fld.set(o, Double.valueOf(getTagValue(fld.getName(), eElement)));
 						else if (fld.getType().toString().equals("class java.util.Date")) fld.set(o, formatter.parse(getTagValue(fld.getName(), eElement)));
 						else if (fld.getType().toString().equals("class java.lang.Boolean")) fld.set(o, Boolean.valueOf(getTagValue(fld.getName(), eElement)));
+						else if (fld.getType().toString().equals("class java.lang.Integer")) fld.set(o, Integer.valueOf(getTagValue(fld.getName(), eElement)));
 					}
 				}
 			}
@@ -331,6 +352,38 @@ public class GDWebServiceImp implements GDWebService {
 			return null;
 		}
 	}
+	
+	@WebMethod(operationName = "getActivatoinInformation")
+	public ActivationInformation getActivatoinInformation(@WebParam(name = "ActivationData") String ActivationData, @WebParam(name="ActivationDataType") Integer ActivationDataType)
+	{
+		try {
+			ActivationInformation ai = new ActivationInformation();
+			ai.ResponseCode = 123;
+			List<Upsell> upsellList = new ArrayList();
+			Upsell newFee = new Upsell();
+			newFee.Description = "test";
+			newFee.Type = 111;
+			newFee.Fee = 400.00;
+			newFee.isEligible = 1;
+			
+			upsellList.add(newFee);
+			
+			Upsell newFee2 = new Upsell();
+			newFee2.Description = "test";
+			newFee2.Type = 111;
+			newFee2.Fee = 400.00;
+			newFee2.isEligible = 1;
+			
+			upsellList.add(newFee2);
+			ai.Upsell = upsellList;
+			return ai;
+		}
+		catch (Exception ex)
+		{
+			return null;
+		}
+	}
+	
 }
 
 

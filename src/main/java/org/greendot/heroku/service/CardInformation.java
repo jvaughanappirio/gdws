@@ -12,16 +12,37 @@ public class CardInformation
 	@XmlElement(name="CardNumber")
 	public String CardNumber;
 
-	@XmlElement(name="Activateable")
-	public Boolean isActivateable;
-
-	@XmlElement(name="PIN")
-	public String PIN;
-
 	@XmlElement(name="CCV")
 	public String CCV;
 
-	@XmlElement(name="TestList")
-	@XmlElementWrapper(name="Test")
-	public String[] TestStrings;
+	@XmlElement(name="CohortKey")
+	public Integer CohortKey;
+	
+	@XmlElement(name="Cohort")
+	public String Cohort;
+	
+	@XmlElement(name="FundingDelay")
+	public Integer FundingDelay;
+	
+	@XmlElement(name="MinorAge")
+	public Integer MinorAge;
+	
+	@XmlElement(name="ProductKey")
+	public Integer ProductKey;
+	
+	@XmlElement(name="ProductDescription")
+	public String ProductDescription;
+	
+	@XmlElement(name="PortfolioKey")
+	public Integer PortfolioKey;
+	
+	@XmlElement(name="Portfolio")
+	public String Portfolio;
+	
+	@XmlElement(name="PortfolioDescription")
+	public String PortfolioDescription;
+	
+	@XmlElement(name="RetailerKey")
+	public Integer RetailerKey;
 }
+
