@@ -499,7 +499,7 @@ public class GDWebServiceImp implements GDWebService {
 			ai.IVRInformation = ivr;
 			ai.ParentInformation = parentinformation;
 			ai.RegistrationToken = 1;
-			ai.ResponseCode = 1;
+			ai.ResponseCode = 0;
 			ai.ResponseText = "ResponseText";
 			ai.Upsell = upsellList;
 			ai.WorkflowResponse = 1;
@@ -648,6 +648,52 @@ public class GDWebServiceImp implements GDWebService {
       ai.WorkflowResponse = 1;
       
       return ai;
+    }
+    catch (Exception ex)
+    {
+      return null;
+    }
+  }
+	
+	@WebMethod(operationName = "QASAddressCheck")
+  public QASResponse QASAddressCheck (@WebParam(name = "Address") org.greendot.heroku.service.Address address)
+  {
+    try {
+      List<Address> addressList = new ArrayList<Address>();
+      
+      Address address1 = new Address();
+      address1.Address1 = "Address1";
+      address1.Address2 = "Address2";
+      address1.Address3 = "Address3";
+      address1.AddressType = 1;
+      address1.City = "City";
+      address1.CountryCode = "USA";
+      address1.State = "ST";
+      address1.Zip = "11111";
+      
+      addressList.add(address1);
+      
+      Address address2 = new Address();
+      address2.Address1 = "Address1";
+      address2.Address2 = "Address2";
+      address2.Address3 = "Address3";
+      address2.AddressType = 2;
+      address2.City = "City";
+      address2.CountryCode = "USA";
+      address2.State = "ST";
+      address2.Zip = "11111";
+      
+      addressList.add(address2);
+      
+      QASResponse qas = new QASResponse();
+      qas.Address = addressList;
+      qas.isMatch = "true";
+      qas.MatchLevel = "StreetPartial";
+      qas.ResponseCode = 0;
+      qas.ResponseText = "ResponseText";
+      
+      return qas;
+      
     }
     catch (Exception ex)
     {
