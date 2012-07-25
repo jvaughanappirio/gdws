@@ -357,25 +357,149 @@ public class GDWebServiceImp implements GDWebService {
 	public ActivationInformation getActivatoinInformation(@WebParam(name = "ActivationData") String ActivationData, @WebParam(name="ActivationDataType") Integer ActivationDataType)
 	{
 		try {
-			ActivationInformation ai = new ActivationInformation();
-			ai.ResponseCode = 123;
-			List<Upsell> upsellList = new ArrayList();
-			Upsell newFee = new Upsell();
-			newFee.Description = "test";
-			newFee.Type = 111;
-			newFee.Fee = 400.00;
-			newFee.isEligible = 1;
-			
-			upsellList.add(newFee);
-			
-			Upsell newFee2 = new Upsell();
-			newFee2.Description = "test";
-			newFee2.Type = 111;
-			newFee2.Fee = 400.00;
-			newFee2.isEligible = 1;
-			
-			upsellList.add(newFee2);
+		  List<Upsell> upsellList = new ArrayList<Upsell>();
+		  List<Address> addressList = new ArrayList<Address>();
+		  List<Phone> phoneList = new ArrayList<Phone>();
+		  List<Fee> feeList = new ArrayList<Fee>();
+		  
+      Upsell newUpsell = new Upsell();
+      newUpsell.Description = "test";
+      newUpsell.Type = 111;
+      newUpsell.Fee = 400.00;
+      newUpsell.isEligible = 1;
+      
+      upsellList.add(newUpsell);
+      
+      Upsell newUpsell2 = new Upsell();
+      newUpsell2.Description = "test";
+      newUpsell2.Type = 111;
+      newUpsell2.Fee = 400.00;
+      newUpsell2.isEligible = 0;
+      
+      upsellList.add(newUpsell2);
+      
+      Fee fee1 = new Fee();
+      fee1.Amount = 100.00;
+      fee1.Description = "Fee 1";
+      fee1.isAllowed = true;
+      fee1.Type = 0;
+      
+      feeList.add(fee1);
+      
+      Fee fee2 = new Fee();
+      fee2.Amount = 200.00;
+      fee2.Description = "Fee 2";
+      fee2.isAllowed = false;
+      fee2.Type = 1;
+      
+      feeList.add(fee2);
+      
+      Address address1 = new Address();
+      address1.Address1 = "Address1";
+      address1.Address2 = "Address2";
+      address1.Address3 = "Address3";
+      address1.AddressType = 1;
+      address1.City = "City";
+      address1.CountryCode = "USA";
+      address1.State = "ST";
+      address1.Zip = "11111";
+      
+      addressList.add(address1);
+      
+      Address address2 = new Address();
+      address2.Address1 = "Address1";
+      address2.Address2 = "Address2";
+      address2.Address3 = "Address3";
+      address2.AddressType = 2;
+      address2.City = "City";
+      address2.CountryCode = "USA";
+      address2.State = "ST";
+      address2.Zip = "11111";
+      
+      addressList.add(address2);
+      
+      Phone phone1 = new Phone();
+      phone1.PhoneNumber = "5555555555";
+      phone1.Type = 1;
+      
+      phoneList.add(phone1);
+      
+      Phone phone2 = new Phone();
+      phone2.PhoneNumber = "5555555555";
+      phone2.Type = 2;
+      
+      phoneList.add(phone2);
+      
+      CustomerInformation customerinformation = new CustomerInformation();
+      customerinformation.ACHReference = "ACHReference";
+      customerinformation.AddressList = addressList;
+      customerinformation.DOB = new Date();
+      customerinformation.Email = "test@test.com";
+      customerinformation.FirstName = "FirstName";
+      customerinformation.isEditable = 1;
+      customerinformation.isMinor = 0;
+      customerinformation.LanguagePreference = 1;
+      customerinformation.LastName = "LastName";
+      customerinformation.MiddleName = "MiddleName";
+      customerinformation.PhoneList = phoneList;
+      customerinformation.SSN = "123456789";
+      
+     BankInformation bi = new BankInformation();
+     bi.ABARoutingNumber = "12345";
+     bi.BankAddress = address1;
+     bi.BankCode = 1;
+     bi.BankKey = 1;
+     bi.BankName = "BankName";
+     
+     CardInformation cardinformation = new CardInformation();
+     
+     cardinformation.CardNumber = "123456789012";
+     cardinformation.CCV = "987";
+     cardinformation.Cohort = "cohort";
+     cardinformation.CohortKey = 1;
+     cardinformation.FundingDelay = 60;
+     cardinformation.MinorAge = 18;
+     cardinformation.Portfolio = "portfolio";
+     cardinformation.PortfolioDescription = "portfoliodescription";
+     cardinformation.PortfolioKey = 1;
+     cardinformation.ProductDescription = "Product Description";
+     cardinformation.ProductKey = 11;
+     cardinformation.RetailerKey = 22;
+     
+     IVRInformation ivr = new IVRInformation();
+     ivr.IVRAuditHdrKey = 1;
+     ivr.QMasterCallTypeKey = 123;
+     ivr.QMasterExitKey = 321;
+     ivr.QMasterKey = 98765;
+     ivr.QMasterScriptKey = 12345;
+     
+     ParentInformation parentinformation = new ParentInformation();
+     parentinformation.AddressList = addressList;
+     parentinformation.DOB = new Date();
+     parentinformation.Email = "parent@email.com";
+     parentinformation.FirstName="ParentFirst";
+     parentinformation.isEditable = 0;
+     parentinformation.LanguagePreference = 0;
+     parentinformation.LastName="ParentLast";
+     parentinformation.MiddleName="ParentMiddle";
+     parentinformation.PhoneList = phoneList;
+     parentinformation.SSN = "098765432";
+     
+		  ActivationInformation ai = new ActivationInformation();
+			ai.ActivationData = "ActivationData";
+			ai.ActivationDataType = 1;
+			ai.BankInformation = bi;
+			ai.CardInformation = cardinformation;
+			ai.CustomerInformation = customerinformation;
+			ai.Fee = feeList;
+			ai.IVRInformation = ivr;
+			ai.ParentInformation = parentinformation;
+			ai.RegistrationToken = 1;
+			ai.ResponseCode = 1;
+			ai.ResponseText = "ResponseText";
 			ai.Upsell = upsellList;
+			ai.WorkflowResponse = 1;
+			
 			return ai;
 		}
 		catch (Exception ex)
