@@ -24,8 +24,8 @@ public class QASResponse
   @XmlElement(name="MatchLevel")
   public String MatchLevel;
   
-  @XmlElementWrapper(name="AddressList", namespace=ns)
-  @XmlElement(name="Address", namespace=ns)
+  @XmlElementWrapper(name="AddressList")
+  @XmlElement(name="Address")
   public List<Address> Address;
 }
 

@@ -22,12 +22,12 @@ public class ParentInformation
 	@XmlElement(name="LastName")
 	public String LastName;
 	
-	@XmlElementWrapper(name="AddressList", namespace=ns)
-	@XmlElement(name="Address", namespace=ns)
+	@XmlElementWrapper(name="AddressList")
+	@XmlElement(name="Address")
 	public List<Address> Address;
 	
-	@XmlElementWrapper(name="PhoneList", namespace=ns)
-	@XmlElement(name="Phone", namespace=ns)
+	@XmlElementWrapper(name="PhoneList")
+	@XmlElement(name="Phone")
 	public List<Phone> Phone;
 	
 	@XmlElement(name="SSN")

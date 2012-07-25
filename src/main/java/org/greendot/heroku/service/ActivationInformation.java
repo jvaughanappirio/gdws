@@ -27,29 +27,29 @@ public class ActivationInformation
 	@XmlElement(name="ActivationDataType")
 	public Integer ActivationDataType;
 	
-	@XmlElement(name="BankInformation", namespace=ns)
+	@XmlElement(name="BankInformation")
 	public BankInformation BankInformation;
 	
-	@XmlElement(name="CardInformation", namespace=ns)
+	@XmlElement(name="CardInformation")
 	public CardInformation CardInformation;
 	
-	@XmlElement(name="CustomerInformation", namespace=ns)
+	@XmlElement(name="CustomerInformation")
 	public CustomerInformation CustomerInformation;
 	
-	@XmlElementWrapper(name="FeeList", namespace=ns)
-	@XmlElement(name="Fee", namespace=ns)
+	@XmlElementWrapper(name="FeeList")
+	@XmlElement(name="Fee")
 	public List<Fee> Fee;
 	
-	@XmlElement(name="IVRInformation", namespace=ns)
+	@XmlElement(name="IVRInformation")
 	public IVRInformation IVRInformation;
 	
-	@XmlElement(name="ParentInformation", namespace=ns)
+	@XmlElement(name="ParentInformation")
 	public ParentInformation ParentInformation;
 	
 	@XmlElement(name="RegistrationToken")
 	public Integer RegistrationToken;
 	
-	@XmlElementWrapper(name="UpsellList", namespace=ns)
-	@XmlElement(name="Upsell", namespace=ns)
+	@XmlElementWrapper(name="UpsellList")
+	@XmlElement(name="Upsell")
 	public List<Upsell> Upsell;
 }

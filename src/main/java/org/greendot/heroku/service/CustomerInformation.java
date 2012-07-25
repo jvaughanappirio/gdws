@@ -24,12 +24,12 @@ public class CustomerInformation
 	@XmlElement(name="LastName")
 	public String LastName;
 	
-	@XmlElementWrapper(name="AddresList", namespace=ns)
-	@XmlElement(name="Address", namespace=ns)
+	@XmlElementWrapper(name="AddresList")
+	@XmlElement(name="Address")
 	public List<Address> Address;
 	
-	@XmlElementWrapper(name="PhoneList", namespace=ns)
-	@XmlElement(name="Phone", namespace=ns)
+	@XmlElementWrapper(name="PhoneList")
+	@XmlElement(name="Phone")
 	public List<Phone> Phone;
 	
 	@XmlElement(name="SSN")
