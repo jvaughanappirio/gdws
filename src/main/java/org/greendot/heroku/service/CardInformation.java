@@ -12,6 +12,7 @@ import java.util.List;
     
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
+@XmlRootElement()
 public class CardInformation
 {
   private static final String ns = "http://service.heroku.greendot.org/";

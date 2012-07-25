@@ -13,6 +13,7 @@ import java.util.Date;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
+@XmlRootElement()
 public class Phone
 {	
   private static final String ns = "http://service.heroku.greendot.org/";

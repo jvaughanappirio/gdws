@@ -13,6 +13,7 @@ import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
+@XmlRootElement()
 public class ParentInformation
 {
   

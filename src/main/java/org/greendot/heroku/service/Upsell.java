@@ -12,7 +12,8 @@ import java.util.ArrayList;
 import java.util.List;    
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
+@XmlType(name="")
+@XmlRootElement()
 public class Upsell
 {	
   private static final String ns = "http://service.heroku.greendot.org/";
