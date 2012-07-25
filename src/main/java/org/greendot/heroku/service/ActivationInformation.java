@@ -12,7 +12,7 @@ public class ActivationInformation
 {	
 	private static final String ns = "http://service.heroku.greendot.org/";
 
-  @XmlElement(name="ResponseCode", namespace=ns)
+  @XmlElement(name="ResponseCode")
 	public Integer ResponseCode;
 	
 	@XmlElement(name="ResponseText", namespace=ns)

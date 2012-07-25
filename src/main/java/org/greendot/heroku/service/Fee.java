@@ -23,6 +23,5 @@ public class Fee
 	
 	@XmlElement(name="Type", namespace=ns)
 	public Integer Type;
-	
 }
 
