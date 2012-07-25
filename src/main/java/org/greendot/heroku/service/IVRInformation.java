@@ -25,5 +25,8 @@ public class IVRInformation
 	
 	@XmlElement(name="QMasterScriptKey")
 	public Integer QMasterScriptKey;
+	
+	@XmlElement(name="Queue")
+  public String Queue;
 }
 

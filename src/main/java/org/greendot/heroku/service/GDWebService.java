@@ -12,7 +12,4 @@ import javax.ejb.Remote;
 @Remote
 public interface GDWebService {
 
-	Object getCardInfo(String cardnumberinput);
-	Object getCustomerByActNum(Double customerKey);
-	Object getQMasterTable(Double qMasterKey);
 }
