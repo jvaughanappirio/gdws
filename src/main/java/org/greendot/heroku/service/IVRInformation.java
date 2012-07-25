@@ -28,5 +28,8 @@ public class IVRInformation
 	
 	@XmlElement(name="Queue")
   public String Queue;
+	
+	@XmlElement(name="QMasterUsherScript")
+  public String QMasterUsherScript;
 }
 

@@ -475,6 +475,7 @@ public class GDWebServiceImp implements GDWebService {
      ivr.QMasterKey = 98765;
      ivr.QMasterScriptKey = 12345;
      ivr.Queue = "Activations";
+     ivr.QMasterUsherScript = "QMasterUsherScript";
      
      ParentInformation parentinformation = new ParentInformation();
      parentinformation.Address = addressList;
@@ -617,6 +618,7 @@ public class GDWebServiceImp implements GDWebService {
      ivr.QMasterKey = 98765;
      ivr.QMasterScriptKey = 12345;
      ivr.Queue = "Activations";
+     ivr.QMasterUsherScript = "QMasterUsherScript";
      
      ParentInformation parentinformation = new ParentInformation();
      parentinformation.Address = addressList;
