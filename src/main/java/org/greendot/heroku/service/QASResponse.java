@@ -10,21 +10,22 @@ import java.util.List;
 @XmlRootElement(name="QASResponse")
 public class QASResponse
 {
+  private static final String ns = "http://service.heroku.greendot.org/";
   
-  @XmlElement(name="ResponseCode")
+  @XmlElement(name="ResponseCode", namespace=ns)
   public Integer ResponseCode;
   
-  @XmlElement(name="ResponseText")
+  @XmlElement(name="ResponseText", namespace=ns)
   public String ResponseText;
   
-  @XmlElement(name="isMatch")
+  @XmlElement(name="isMatch", namespace=ns)
   public String isMatch;
   
-  @XmlElement(name="MatchLevel")
+  @XmlElement(name="MatchLevel", namespace=ns)
   public String MatchLevel;
   
-  @XmlElementWrapper(name="AddressList")
-  @XmlElement(name="Address", namespace="http://service.heroku.greendot.org/")
+  @XmlElementWrapper(name="AddressList", namespace=ns)
+  @XmlElement(name="Address", namespace=ns)
   public List<Address> Address;
 }
 

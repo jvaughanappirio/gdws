@@ -10,18 +10,20 @@ import java.util.Date;
 @XmlRootElement(name="BankInformation")
 public class BankInformation
 {	
-	@XmlElement(name="BankName")
+  private static final String ns = "http://service.heroku.greendot.org/";
+  
+	@XmlElement(name="BankName", namespace=ns)
 	public String BankName;
 	
-	@XmlElement(name="BankKey")
+	@XmlElement(name="BankKey", namespace=ns)
 	public Integer BankKey;
 	
-	@XmlElement(name="BankCode")
+	@XmlElement(name="BankCode", namespace=ns)
 	public Integer BankCode;
 	
-	@XmlElement(name="ABARoutingNumber")
+	@XmlElement(name="ABARoutingNumber", namespace=ns)
 	public String ABARoutingNumber;
 	
-	@XmlElement(name="BankAddress", namespace="http://service.heroku.greendot.org/")
+	@XmlElement(name="BankAddress", namespace=ns)
 	public Address BankAddress;
 }

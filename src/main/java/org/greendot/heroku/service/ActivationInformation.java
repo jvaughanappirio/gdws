@@ -7,47 +7,49 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;    
 
-@XmlRootElement(name="ActivationInformation", namespace="http://service.heroku.greendot.org/")
+@XmlRootElement(name="ActivationInformation", namespace= "http://service.heroku.greendot.org/")
 public class ActivationInformation
 {	
-	@XmlElement(name="ResponseCode")
+	private static final String ns = "http://service.heroku.greendot.org/";
+
+  @XmlElement(name="ResponseCode", namespace=ns)
 	public Integer ResponseCode;
 	
-	@XmlElement(name="ResponseText")
+	@XmlElement(name="ResponseText", namespace=ns)
 	public String ResponseText;
 	
-	@XmlElement(name="WorkflowResponse")
+	@XmlElement(name="WorkflowResponse", namespace=ns)
 	public Integer WorkflowResponse;
 	
-	@XmlElement(name="ActivationData")
+	@XmlElement(name="ActivationData", namespace=ns)
 	public String ActivationData;
 	
-	@XmlElement(name="ActivationDataType")
+	@XmlElement(name="ActivationDataType", namespace=ns)
 	public Integer ActivationDataType;
 	
-	@XmlElement(name="BankInformation", namespace="http://service.heroku.greendot.org/")
+	@XmlElement(name="BankInformation", namespace=ns)
 	public BankInformation BankInformation;
 	
-	@XmlElement(name="CardInformation", namespace="http://service.heroku.greendot.org/")
+	@XmlElement(name="CardInformation", namespace=ns)
 	public CardInformation CardInformation;
 	
-	@XmlElement(name="CustomerInformation", namespace="http://service.heroku.greendot.org/")
+	@XmlElement(name="CustomerInformation", namespace=ns)
 	public CustomerInformation CustomerInformation;
 	
-	@XmlElementWrapper(name="FeeList")
-	@XmlElement(name="Fee", namespace="http://service.heroku.greendot.org/")
+	@XmlElementWrapper(name="FeeList", namespace=ns)
+	@XmlElement(name="Fee", namespace=ns)
 	public List<Fee> Fee;
 	
-	@XmlElement(name="IVRInformation")
+	@XmlElement(name="IVRInformation", namespace=ns)
 	public IVRInformation IVRInformation;
 	
-	@XmlElement(name="ParentInformation", namespace="http://service.heroku.greendot.org/")
+	@XmlElement(name="ParentInformation", namespace=ns)
 	public ParentInformation ParentInformation;
 	
-	@XmlElement(name="RegistrationToken")
+	@XmlElement(name="RegistrationToken", namespace=ns)
 	public Integer RegistrationToken;
 	
-	@XmlElementWrapper(name="UpsellList")
-	@XmlElement(name="Upsell", namespace="http://service.heroku.greendot.org/")
+	@XmlElementWrapper(name="UpsellList", namespace=ns)
+	@XmlElement(name="Upsell", namespace=ns)
 	public List<Upsell> Upsell;
 }

@@ -10,12 +10,14 @@ import java.util.Date;
 @XmlRootElement(name="Phone")
 public class Phone
 {	
-	@XmlElement(name="PhoneNumber")
+  private static final String ns = "http://service.heroku.greendot.org/";
+  
+	@XmlElement(name="PhoneNumber", namespace=ns)
 	public String PhoneNumber;
 
-	@XmlElement(name="Extension")
+	@XmlElement(name="Extension", namespace=ns)
 	public String Extension;
 
-	@XmlElement(name="Type")
+	@XmlElement(name="Type", namespace=ns)
 	public Integer Type;
 }

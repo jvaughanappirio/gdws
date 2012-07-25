@@ -10,26 +10,27 @@ import java.util.List;
 @XmlRootElement(name="IVRInformation")
 public class IVRInformation
 {
-	
-	@XmlElement(name="QMasterKey")
+  private static final String ns = "http://service.heroku.greendot.org/";
+  
+	@XmlElement(name="QMasterKey", namespace=ns)
 	public Integer QMasterKey;
 	
-	@XmlElement(name="IVRAuditHdrKey")
+	@XmlElement(name="IVRAuditHdrKey", namespace=ns)
 	public Integer IVRAuditHdrKey;
 	
-	@XmlElement(name="QMasterCallTypeKey")
+	@XmlElement(name="QMasterCallTypeKey", namespace=ns)
 	public Integer QMasterCallTypeKey;
 	
-	@XmlElement(name="QMasterExitKey")
+	@XmlElement(name="QMasterExitKey", namespace=ns)
 	public Integer QMasterExitKey;
 	
-	@XmlElement(name="QMasterScriptKey")
+	@XmlElement(name="QMasterScriptKey", namespace=ns)
 	public Integer QMasterScriptKey;
 	
-	@XmlElement(name="Queue")
+	@XmlElement(name="Queue", namespace=ns)
   public String Queue;
 	
-	@XmlElement(name="QMasterUsherScript")
+	@XmlElement(name="QMasterUsherScript", namespace=ns)
   public String QMasterUsherScript;
 }
 

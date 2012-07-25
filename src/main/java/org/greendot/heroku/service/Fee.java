@@ -10,17 +10,18 @@ import java.util.List;
 @XmlRootElement(name="Fee")
 public class Fee
 {
-	
-	@XmlElement(name="Amount")
+  private static final String ns = "http://service.heroku.greendot.org/";
+  
+	@XmlElement(name="Amount", namespace=ns)
 	public Double Amount;
 	
-	@XmlElement(name="Description")
+	@XmlElement(name="Description", namespace=ns)
 	public String Description;
 	
-	@XmlElement(name="isAllowed")
+	@XmlElement(name="isAllowed", namespace=ns)
 	public Boolean isAllowed;
 	
-	@XmlElement(name="Type")
+	@XmlElement(name="Type", namespace=ns)
 	public Integer Type;
 	
 }

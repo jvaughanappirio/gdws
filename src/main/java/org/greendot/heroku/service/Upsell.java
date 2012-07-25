@@ -10,15 +10,17 @@ import java.util.List;
 @XmlRootElement(name="Upsell")
 public class Upsell
 {	
-	@XmlElement(name="Description")
+  private static final String ns = "http://service.heroku.greendot.org/";
+  
+	@XmlElement(name="Description", namespace=ns)
 	public String Description;
 	
-	@XmlElement(name="Type")
+	@XmlElement(name="Type", namespace=ns)
 	public Integer Type;
 	
-	@XmlElement(name="Fee")
+	@XmlElement(name="Fee", namespace=ns)
 	public Double Fee;
 	
-	@XmlElement(name="isEligible")
+	@XmlElement(name="isEligible", namespace=ns)
 	public Integer isEligible;
 }

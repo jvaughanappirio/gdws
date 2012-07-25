@@ -11,33 +11,35 @@ import java.util.Date;
 @XmlRootElement(name="Address", namespace="http://service.heroku.greendot.org/")
 public class Address
 {	
-	@XmlElement(name="Address1")
+	private static final String ns = "http://service.heroku.greendot.org/";
+
+  @XmlElement(name="Address1", namespace=ns)
 	public String Address1;
 	
-	@XmlElement(name="Address2")
+	@XmlElement(name="Address2", namespace=ns)
 	public String Address2;
 	
-	@XmlElement(name="Address3")
+	@XmlElement(name="Address3", namespace=ns)
 	public String Address3;
 	
-	@XmlElement(name="City")
+	@XmlElement(name="City", namespace=ns)
 	public String City;
 	
-	@XmlElement(name="CountryCode")
+	@XmlElement(name="CountryCode", namespace=ns)
 	public String CountryCode;
 	
-	@XmlElement(name="Latitude")
+	@XmlElement(name="Latitude", namespace=ns)
 	public String Latitude;
 	
-	@XmlElement(name="Longitude")
+	@XmlElement(name="Longitude", namespace=ns)
 	public String Longitude;
 	
-	@XmlElement(name="State")
+	@XmlElement(name="State", namespace=ns)
 	public String State;
 	
-	@XmlElement(name="Zip")
+	@XmlElement(name="Zip", namespace=ns)
 	public String Zip;
 	
-	@XmlElement(name="AddressType")
+	@XmlElement(name="AddressType", namespace=ns)
 	public Integer AddressType;
 }
