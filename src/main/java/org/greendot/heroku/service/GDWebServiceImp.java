@@ -359,15 +359,15 @@ public class GDWebServiceImp implements GDWebService {
 	}*/
 	
 	@WebMethod(operationName = "getActivationInformation")
-	public ActivationInformation getActivationInformation(@WebParam(name = "ActivationData") String ActivationData, @WebParam(name="ActivationDataType") Integer ActivationDataType)
+	public ActivationInformationClass getActivationInformation(@WebParam(name = "ActivationData") String ActivationData, @WebParam(name="ActivationDataType") Integer ActivationDataType)
 	{
 		try {
-		  List<Upsell> upsellList = new ArrayList<Upsell>();
-		  List<Address> addressList = new ArrayList<Address>();
-		  List<Phone> phoneList = new ArrayList<Phone>();
-		  List<Fee> feeList = new ArrayList<Fee>();
+		  List<UpsellClass> upsellList = new ArrayList<UpsellClass>();
+		  List<AddressClass> addressList = new ArrayList<AddressClass>();
+		  List<PhoneClass> phoneList = new ArrayList<PhoneClass>();
+		  List<FeeClass> feeList = new ArrayList<FeeClass>();
 		  
-      Upsell newUpsell = new Upsell();
+      UpsellClass newUpsell = new UpsellClass();
       newUpsell.Description = "test";
       newUpsell.Type = 111;
       newUpsell.Fee = 400.00;
@@ -375,7 +375,7 @@ public class GDWebServiceImp implements GDWebService {
       
       upsellList.add(newUpsell);
       
-      Upsell newUpsell2 = new Upsell();
+      UpsellClass newUpsell2 = new UpsellClass();
       newUpsell2.Description = "test";
       newUpsell2.Type = 111;
       newUpsell2.Fee = 400.00;
@@ -383,7 +383,7 @@ public class GDWebServiceImp implements GDWebService {
       
       upsellList.add(newUpsell2);
       
-      Fee fee1 = new Fee();
+      FeeClass fee1 = new FeeClass();
       fee1.Amount = 100.00;
       fee1.Description = "Fee 1";
       fee1.isAllowed = true;
@@ -391,7 +391,7 @@ public class GDWebServiceImp implements GDWebService {
       
       feeList.add(fee1);
       
-      Fee fee2 = new Fee();
+      FeeClass fee2 = new FeeClass();
       fee2.Amount = 200.00;
       fee2.Description = "Fee 2";
       fee2.isAllowed = false;
@@ -399,7 +399,7 @@ public class GDWebServiceImp implements GDWebService {
       
       feeList.add(fee2);
       
-      Address address1 = new Address();
+      AddressClass address1 = new AddressClass();
       address1.Address1 = "Address1";
       address1.Address2 = "Address2";
       address1.Address3 = "Address3";
@@ -411,7 +411,7 @@ public class GDWebServiceImp implements GDWebService {
       
       addressList.add(address1);
       
-      Address address2 = new Address();
+      AddressClass address2 = new AddressClass();
       address2.Address1 = "Address1";
       address2.Address2 = "Address2";
       address2.Address3 = "Address3";
@@ -423,19 +423,19 @@ public class GDWebServiceImp implements GDWebService {
       
       addressList.add(address2);
       
-      Phone phone1 = new Phone();
+      PhoneClass phone1 = new PhoneClass();
       phone1.PhoneNumber = "5555555555";
       phone1.Type = 1;
       
       phoneList.add(phone1);
       
-      Phone phone2 = new Phone();
+      PhoneClass phone2 = new PhoneClass();
       phone2.PhoneNumber = "5555555555";
       phone2.Type = 2;
       
       phoneList.add(phone2);
       
-      CustomerInformation customerinformation = new CustomerInformation();
+      CustomerInformationClass customerinformation = new CustomerInformationClass();
       customerinformation.ACHReference = "ACHReference";
       customerinformation.Address = addressList;
       customerinformation.DOB = new Date();
@@ -449,14 +449,14 @@ public class GDWebServiceImp implements GDWebService {
       customerinformation.Phone = phoneList;
       customerinformation.SSN = "123456789";
       
-     BankInformation bi = new BankInformation();
+     BankInformationClass bi = new BankInformationClass();
      bi.ABARoutingNumber = "12345";
      bi.BankAddress = address1;
      bi.BankCode = 1;
      bi.BankKey = 1;
      bi.BankName = "BankName";
      
-     CardInformation cardinformation = new CardInformation();
+     CardInformationClass cardinformation = new CardInformationClass();
      
      cardinformation.CardNumber = "123456789012";
      cardinformation.CCV = "987";
@@ -471,7 +471,7 @@ public class GDWebServiceImp implements GDWebService {
      cardinformation.ProductKey = 11;
      cardinformation.RetailerKey = 22;
      
-     IVRInformation ivr = new IVRInformation();
+     IVRInformationClass ivr = new IVRInformationClass();
      ivr.IVRAuditHdrKey = 1;
      ivr.QMasterCallTypeKey = 123;
      ivr.QMasterExitKey = 321;
@@ -480,7 +480,7 @@ public class GDWebServiceImp implements GDWebService {
      ivr.Queue = "Activations";
      ivr.QMasterUsherScript = "QMasterUsherScript";
      
-     ParentInformation parentinformation = new ParentInformation();
+     ParentInformationClass parentinformation = new ParentInformationClass();
      parentinformation.Address = addressList;
      parentinformation.DOB = new Date();
      parentinformation.Email = "parent@email.com";
@@ -492,7 +492,7 @@ public class GDWebServiceImp implements GDWebService {
      parentinformation.Phone = phoneList;
      parentinformation.SSN = "098765432";
      
-		  ActivationInformation ai = new ActivationInformation();
+		  ActivationInformationClass ai = new ActivationInformationClass();
 			ai.ActivationData = "ActivationData";
 			ai.ActivationDataType = 1;
 			ai.BankInformation = bi;
@@ -516,15 +516,15 @@ public class GDWebServiceImp implements GDWebService {
 	}
 	
 	@WebMethod(operationName = "updateActivationInformation")
-  public ActivationInformation updateActivationInformation (@WebParam(name = "RegistrationToken") Integer RegistrationToken, @WebParam(name = "ProductKey") Integer ProductKey, @WebParam(name = "CustomerInformation") CustomerInformation CustomerInformation)
+  public ActivationInformationClass updateActivationInformation (@WebParam(name = "RegistrationToken") Integer RegistrationToken, @WebParam(name = "ProductKey") Integer ProductKey, @WebParam(name = "CustomerInformation") CustomerInformationClass CustomerInformation)
   {
 	  try {
-      List<Upsell> upsellList = new ArrayList<Upsell>();
-      List<Address> addressList = new ArrayList<Address>();
-      List<Phone> phoneList = new ArrayList<Phone>();
-      List<Fee> feeList = new ArrayList<Fee>();
+      List<UpsellClass> upsellList = new ArrayList<UpsellClass>();
+      List<AddressClass> addressList = new ArrayList<AddressClass>();
+      List<PhoneClass> phoneList = new ArrayList<PhoneClass>();
+      List<FeeClass> feeList = new ArrayList<FeeClass>();
       
-      Upsell newUpsell = new Upsell();
+      UpsellClass newUpsell = new UpsellClass();
       newUpsell.Description = "test";
       newUpsell.Type = 111;
       newUpsell.Fee = 400.00;
@@ -532,7 +532,7 @@ public class GDWebServiceImp implements GDWebService {
       
       upsellList.add(newUpsell);
       
-      Upsell newUpsell2 = new Upsell();
+      UpsellClass newUpsell2 = new UpsellClass();
       newUpsell2.Description = "test";
       newUpsell2.Type = 111;
       newUpsell2.Fee = 400.00;
@@ -540,7 +540,7 @@ public class GDWebServiceImp implements GDWebService {
       
       upsellList.add(newUpsell2);
       
-      Fee fee1 = new Fee();
+      FeeClass fee1 = new FeeClass();
       fee1.Amount = 100.00;
       fee1.Description = "Fee 1";
       fee1.isAllowed = true;
@@ -548,7 +548,7 @@ public class GDWebServiceImp implements GDWebService {
       
       feeList.add(fee1);
       
-      Fee fee2 = new Fee();
+      FeeClass fee2 = new FeeClass();
       fee2.Amount = 200.00;
       fee2.Description = "Fee 2";
       fee2.isAllowed = false;
@@ -556,7 +556,7 @@ public class GDWebServiceImp implements GDWebService {
       
       feeList.add(fee2);
       
-      Address address1 = new Address();
+      AddressClass address1 = new AddressClass();
       address1.Address1 = "Address1";
       address1.Address2 = "Address2";
       address1.Address3 = "Address3";
@@ -568,7 +568,7 @@ public class GDWebServiceImp implements GDWebService {
       
       addressList.add(address1);
       
-      Address address2 = new Address();
+      AddressClass address2 = new AddressClass();
       address2.Address1 = "Address1";
       address2.Address2 = "Address2";
       address2.Address3 = "Address3";
@@ -580,26 +580,26 @@ public class GDWebServiceImp implements GDWebService {
       
       addressList.add(address2);
       
-      Phone phone1 = new Phone();
+      PhoneClass phone1 = new PhoneClass();
       phone1.PhoneNumber = "5555555555";
       phone1.Type = 1;
       
       phoneList.add(phone1);
       
-      Phone phone2 = new Phone();
+      PhoneClass phone2 = new PhoneClass();
       phone2.PhoneNumber = "5555555555";
       phone2.Type = 2;
       
       phoneList.add(phone2);
       
-     BankInformation bi = new BankInformation();
+     BankInformationClass bi = new BankInformationClass();
      bi.ABARoutingNumber = "12345";
      bi.BankAddress = address1;
      bi.BankCode = 1;
      bi.BankKey = 1;
      bi.BankName = "BankName";
      
-     CardInformation cardinformation = new CardInformation();
+     CardInformationClass cardinformation = new CardInformationClass();
      
      cardinformation.CardNumber = "123456789012";
      cardinformation.CCV = "987";
@@ -614,7 +614,7 @@ public class GDWebServiceImp implements GDWebService {
      cardinformation.ProductKey = 11;
      cardinformation.RetailerKey = 22;
      
-     IVRInformation ivr = new IVRInformation();
+     IVRInformationClass ivr = new IVRInformationClass();
      ivr.IVRAuditHdrKey = 1;
      ivr.QMasterCallTypeKey = 123;
      ivr.QMasterExitKey = 321;
@@ -623,7 +623,7 @@ public class GDWebServiceImp implements GDWebService {
      ivr.Queue = "Activations";
      ivr.QMasterUsherScript = "QMasterUsherScript";
      
-     ParentInformation parentinformation = new ParentInformation();
+     ParentInformationClass parentinformation = new ParentInformationClass();
      parentinformation.Address = addressList;
      parentinformation.DOB = new Date();
      parentinformation.Email = "parent@email.com";
@@ -635,7 +635,7 @@ public class GDWebServiceImp implements GDWebService {
      parentinformation.Phone = phoneList;
      parentinformation.SSN = "098765432";
      
-      ActivationInformation ai = new ActivationInformation();
+      ActivationInformationClass ai = new ActivationInformationClass();
       ai.ActivationData = "ActivationData";
       ai.ActivationDataType = 1;
       ai.BankInformation = bi;
@@ -659,12 +659,12 @@ public class GDWebServiceImp implements GDWebService {
   }
 	
 	@WebMethod(operationName = "QASAddressCheck")
-  public QASResponse QASAddressCheck (@WebParam(name = "Address", targetNamespace="http://service.heroku.greendot.org/") Address address)
+  public QASResponseClass QASAddressCheck (@WebParam(name = "Address", targetNamespace="http://service.heroku.greendot.org/") AddressClass address)
   {
     try {
-      List<Address> addressList = new ArrayList<Address>();
+      List<AddressClass> addressList = new ArrayList<AddressClass>();
       
-      Address address1 = new Address();
+      AddressClass address1 = new AddressClass();
       address1.Address1 = "Address1";
       address1.Address2 = "Address2";
       address1.Address3 = "Address3";
@@ -676,7 +676,7 @@ public class GDWebServiceImp implements GDWebService {
       
       addressList.add(address1);
       
-      Address address2 = new Address();
+      AddressClass address2 = new AddressClass();
       address2.Address1 = "Address1";
       address2.Address2 = "Address2";
       address2.Address3 = "Address3";
@@ -688,7 +688,7 @@ public class GDWebServiceImp implements GDWebService {
       
       addressList.add(address2);
       
-      QASResponse qas = new QASResponse();
+      QASResponseClass qas = new QASResponseClass();
       qas.Address = addressList;
       qas.isMatch = "true";
       qas.MatchLevel = "StreetPartial";
