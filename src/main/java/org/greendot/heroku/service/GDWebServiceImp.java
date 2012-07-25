@@ -33,7 +33,7 @@ import java.lang.Object;
 import java.lang.reflect.Field;
 
 
-@WebService
+@WebService(targetNamespace="http://service.heroku.greendot.org/")
 @Stateless
 
 public class GDWebServiceImp implements GDWebService {
@@ -516,7 +516,7 @@ public class GDWebServiceImp implements GDWebService {
 	}
 	
 	@WebMethod(operationName = "updateActivationInformation")
-  public ActivationInformation updateActivationInformation (@WebParam(name = "RegistrationToken") Integer RegistrationToken, @WebParam(name = "ProductKey") Integer ProductKey, @WebParam(name = "CustomerInformation", targetNamespace="http://service.heroku.greendot.org/") CustomerInformation CustomerInformation)
+  public ActivationInformation updateActivationInformation (@WebParam(name = "RegistrationToken") Integer RegistrationToken, @WebParam(name = "ProductKey") Integer ProductKey, @WebParam(name = "CustomerInformation") CustomerInformation CustomerInformation)
   {
 	  try {
       List<Upsell> upsellList = new ArrayList<Upsell>();

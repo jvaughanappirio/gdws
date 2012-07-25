@@ -1,8 +1,12 @@
 package org.greendot.heroku.service;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;  
 import javax.xml.bind.annotation.XmlElementWrapper;  
+import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlRootElement;  
+import javax.xml.bind.annotation.XmlType;
 
 import com.sun.xml.txw2.annotation.XmlNamespace;
 
@@ -10,7 +14,8 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;    
 
-@XmlRootElement(name="CustomerInformation")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "")
 public class CustomerInformation
 {
   private static final String ns = "http://service.heroku.greendot.org/";
@@ -27,12 +32,12 @@ public class CustomerInformation
 	@XmlElement(name="LastName")
 	public String LastName;
 	
-	@XmlElementWrapper(name="AddresList")
-	@XmlElement(name="Address", namespace=ns)
+	@XmlElementWrapper(name="AddressList")
+	@XmlElement(name="Address")
 	public List<Address> Address;
 	
 	@XmlElementWrapper(name="PhoneList")
-	@XmlElement(name="Phone", namespace=ns)
+	@XmlElement(name="Phone")
 	public List<Phone> Phone;
 	
 	@XmlElement(name="SSN")
