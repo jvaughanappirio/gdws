@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;    
 
-@XmlRootElement(name="ActivationInformation")
+@XmlRootElement(name="ActivationInformation", namespace="http://service.heroku.greendot.org/")
 public class ActivationInformation
 {	
 	@XmlElement(name="ResponseCode")
@@ -25,29 +25,29 @@ public class ActivationInformation
 	@XmlElement(name="ActivationDataType")
 	public Integer ActivationDataType;
 	
-	@XmlElement(name="BankInformation")
+	@XmlElement(name="BankInformation", namespace="http://service.heroku.greendot.org/")
 	public BankInformation BankInformation;
 	
-	@XmlElement(name="CardInformation")
+	@XmlElement(name="CardInformation", namespace="http://service.heroku.greendot.org/")
 	public CardInformation CardInformation;
 	
-	@XmlElement(name="CustomerInformation")
+	@XmlElement(name="CustomerInformation", namespace="http://service.heroku.greendot.org/")
 	public CustomerInformation CustomerInformation;
 	
 	@XmlElementWrapper(name="FeeList")
-	@XmlElement(name="Fee")
+	@XmlElement(name="Fee", namespace="http://service.heroku.greendot.org/")
 	public List<Fee> Fee;
 	
 	@XmlElement(name="IVRInformation")
 	public IVRInformation IVRInformation;
 	
-	@XmlElement(name="ParentInformation")
+	@XmlElement(name="ParentInformation", namespace="http://service.heroku.greendot.org/")
 	public ParentInformation ParentInformation;
 	
 	@XmlElement(name="RegistrationToken")
 	public Integer RegistrationToken;
 	
 	@XmlElementWrapper(name="UpsellList")
-	@XmlElement(name="Upsell")
+	@XmlElement(name="Upsell", namespace="http://service.heroku.greendot.org/")
 	public List<Upsell> Upsell;
 }

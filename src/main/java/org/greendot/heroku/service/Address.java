@@ -2,12 +2,13 @@ package org.greendot.heroku.service;
 
 import javax.xml.bind.annotation.XmlElement;  
 import javax.xml.bind.annotation.XmlElementWrapper;  
+import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.bind.annotation.XmlRootElement; 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
-@XmlRootElement(name="Address")
+@XmlRootElement(name="Address", namespace="http://service.heroku.greendot.org/")
 public class Address
 {	
 	@XmlElement(name="Address1")

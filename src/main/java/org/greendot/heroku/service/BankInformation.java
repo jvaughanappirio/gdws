@@ -22,6 +22,6 @@ public class BankInformation
 	@XmlElement(name="ABARoutingNumber")
 	public String ABARoutingNumber;
 	
-	@XmlElement(name="BankAddress")
+	@XmlElement(name="BankAddress", namespace="http://service.heroku.greendot.org/")
 	public Address BankAddress;
 }

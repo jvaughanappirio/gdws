@@ -24,11 +24,11 @@ public class CustomerInformation
 	public String LastName;
 	
 	@XmlElementWrapper(name="AddresList")
-	@XmlElement(name="Address")
+	@XmlElement(name="Address", namespace="http://service.heroku.greendot.org/")
 	public List<Address> Address;
 	
 	@XmlElementWrapper(name="PhoneList")
-	@XmlElement(name="Phone")
+	@XmlElement(name="Phone", namespace="http://service.heroku.greendot.org/")
 	public List<Phone> Phone;
 	
 	@XmlElement(name="SSN")

@@ -32,12 +32,15 @@ import java.io.File;
 import java.lang.Object;
 import java.lang.reflect.Field;
 
+
 @WebService
 @Stateless
 
 public class GDWebServiceImp implements GDWebService {
 	
-	private File XmlFile;
+	private static final String tns = "http://service.heroku.greendot.org/";
+  private File XmlFile;
+	
 
 	/*@WebMethod(operationName = "getCardInfo")
 	public CardInformation getCardInfo(@WebParam(name = "cardnumber") String cardnumber) {
@@ -513,7 +516,7 @@ public class GDWebServiceImp implements GDWebService {
 	}
 	
 	@WebMethod(operationName = "updateActivationInformation")
-  public ActivationInformation updateActivationInformation (@WebParam(name = "RegistrationToken") Integer RegistrationToken, @WebParam(name = "ProductKey") Integer ProductKey, @WebParam(name = "CustomerInformation") CustomerInformation CustomerInformation)
+  public ActivationInformation updateActivationInformation (@WebParam(name = "RegistrationToken") Integer RegistrationToken, @WebParam(name = "ProductKey") Integer ProductKey, @WebParam(name = "CustomerInformation", targetNamespace=tns) CustomerInformation CustomerInformation)
   {
 	  try {
       List<Upsell> upsellList = new ArrayList<Upsell>();
@@ -656,7 +659,7 @@ public class GDWebServiceImp implements GDWebService {
   }
 	
 	@WebMethod(operationName = "QASAddressCheck")
-  public QASResponse QASAddressCheck (@WebParam(name = "Address") org.greendot.heroku.service.Address address)
+  public QASResponse QASAddressCheck (@WebParam(name = "Address", targetNamespace=tns) org.greendot.heroku.service.Address address)
   {
     try {
       List<Address> addressList = new ArrayList<Address>();

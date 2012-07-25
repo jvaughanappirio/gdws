@@ -24,7 +24,7 @@ public class QASResponse
   public String MatchLevel;
   
   @XmlElementWrapper(name="AddressList")
-  @XmlElement(name="Address")
+  @XmlElement(name="Address", namespace="http://service.heroku.greendot.org/")
   public List<Address> Address;
 }
 
