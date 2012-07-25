@@ -12,16 +12,16 @@ public class Fee
 {
   private static final String ns = "http://service.heroku.greendot.org/";
   
-	@XmlElement(name="Amount", namespace=ns)
+	@XmlElement(name="Amount")
 	public Double Amount;
 	
-	@XmlElement(name="Description", namespace=ns)
+	@XmlElement(name="Description")
 	public String Description;
 	
-	@XmlElement(name="isAllowed", namespace=ns)
+	@XmlElement(name="isAllowed")
 	public Boolean isAllowed;
 	
-	@XmlElement(name="Type", namespace=ns)
+	@XmlElement(name="Type")
 	public Integer Type;
 }
 

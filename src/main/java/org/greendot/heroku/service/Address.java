@@ -13,33 +13,33 @@ public class Address
 {	
 	private static final String ns = "http://service.heroku.greendot.org/";
 
-  @XmlElement(name="Address1", namespace=ns)
+  @XmlElement(name="Address1")
 	public String Address1;
 	
-	@XmlElement(name="Address2", namespace=ns)
+	@XmlElement(name="Address2")
 	public String Address2;
 	
-	@XmlElement(name="Address3", namespace=ns)
+	@XmlElement(name="Address3")
 	public String Address3;
 	
-	@XmlElement(name="City", namespace=ns)
+	@XmlElement(name="City")
 	public String City;
 	
-	@XmlElement(name="CountryCode", namespace=ns)
+	@XmlElement(name="CountryCode")
 	public String CountryCode;
 	
-	@XmlElement(name="Latitude", namespace=ns)
+	@XmlElement(name="Latitude")
 	public String Latitude;
 	
-	@XmlElement(name="Longitude", namespace=ns)
+	@XmlElement(name="Longitude")
 	public String Longitude;
 	
-	@XmlElement(name="State", namespace=ns)
+	@XmlElement(name="State")
 	public String State;
 	
-	@XmlElement(name="Zip", namespace=ns)
+	@XmlElement(name="Zip")
 	public String Zip;
 	
-	@XmlElement(name="AddressType", namespace=ns)
+	@XmlElement(name="AddressType")
 	public Integer AddressType;
 }

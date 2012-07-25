@@ -12,18 +12,18 @@ public class BankInformation
 {	
   private static final String ns = "http://service.heroku.greendot.org/";
   
-	@XmlElement(name="BankName", namespace=ns)
+	@XmlElement(name="BankName")
 	public String BankName;
 	
-	@XmlElement(name="BankKey", namespace=ns)
+	@XmlElement(name="BankKey")
 	public Integer BankKey;
 	
-	@XmlElement(name="BankCode", namespace=ns)
+	@XmlElement(name="BankCode")
 	public Integer BankCode;
 	
-	@XmlElement(name="ABARoutingNumber", namespace=ns)
+	@XmlElement(name="ABARoutingNumber")
 	public String ABARoutingNumber;
 	
-	@XmlElement(name="BankAddress", namespace=ns)
+	@XmlElement(name="BankAddress")
 	public Address BankAddress;
 }

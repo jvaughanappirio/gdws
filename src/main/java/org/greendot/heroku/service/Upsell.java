@@ -12,15 +12,15 @@ public class Upsell
 {	
   private static final String ns = "http://service.heroku.greendot.org/";
   
-	@XmlElement(name="Description", namespace=ns)
+	@XmlElement(name="Description")
 	public String Description;
 	
-	@XmlElement(name="Type", namespace=ns)
+	@XmlElement(name="Type")
 	public Integer Type;
 	
-	@XmlElement(name="Fee", namespace=ns)
+	@XmlElement(name="Fee")
 	public Double Fee;
 	
-	@XmlElement(name="isEligible", namespace=ns)
+	@XmlElement(name="isEligible")
 	public Integer isEligible;
 }

@@ -12,12 +12,12 @@ public class Phone
 {	
   private static final String ns = "http://service.heroku.greendot.org/";
   
-	@XmlElement(name="PhoneNumber", namespace=ns)
+	@XmlElement(name="PhoneNumber")
 	public String PhoneNumber;
 
-	@XmlElement(name="Extension", namespace=ns)
+	@XmlElement(name="Extension")
 	public String Extension;
 
-	@XmlElement(name="Type", namespace=ns)
+	@XmlElement(name="Type")
 	public Integer Type;
 }

@@ -12,16 +12,16 @@ public class QASResponse
 {
   private static final String ns = "http://service.heroku.greendot.org/";
   
-  @XmlElement(name="ResponseCode", namespace=ns)
+  @XmlElement(name="ResponseCode")
   public Integer ResponseCode;
   
-  @XmlElement(name="ResponseText", namespace=ns)
+  @XmlElement(name="ResponseText")
   public String ResponseText;
   
-  @XmlElement(name="isMatch", namespace=ns)
+  @XmlElement(name="isMatch")
   public String isMatch;
   
-  @XmlElement(name="MatchLevel", namespace=ns)
+  @XmlElement(name="MatchLevel")
   public String MatchLevel;
   
   @XmlElementWrapper(name="AddressList", namespace=ns)

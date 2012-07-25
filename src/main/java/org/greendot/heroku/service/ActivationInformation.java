@@ -15,16 +15,16 @@ public class ActivationInformation
   @XmlElement(name="ResponseCode")
 	public Integer ResponseCode;
 	
-	@XmlElement(name="ResponseText", namespace=ns)
+	@XmlElement(name="ResponseText")
 	public String ResponseText;
 	
-	@XmlElement(name="WorkflowResponse", namespace=ns)
+	@XmlElement(name="WorkflowResponse")
 	public Integer WorkflowResponse;
 	
-	@XmlElement(name="ActivationData", namespace=ns)
+	@XmlElement(name="ActivationData")
 	public String ActivationData;
 	
-	@XmlElement(name="ActivationDataType", namespace=ns)
+	@XmlElement(name="ActivationDataType")
 	public Integer ActivationDataType;
 	
 	@XmlElement(name="BankInformation", namespace=ns)
@@ -46,7 +46,7 @@ public class ActivationInformation
 	@XmlElement(name="ParentInformation", namespace=ns)
 	public ParentInformation ParentInformation;
 	
-	@XmlElement(name="RegistrationToken", namespace=ns)
+	@XmlElement(name="RegistrationToken")
 	public Integer RegistrationToken;
 	
 	@XmlElementWrapper(name="UpsellList", namespace=ns)

@@ -12,25 +12,25 @@ public class IVRInformation
 {
   private static final String ns = "http://service.heroku.greendot.org/";
   
-	@XmlElement(name="QMasterKey", namespace=ns)
+	@XmlElement(name="QMasterKey")
 	public Integer QMasterKey;
 	
-	@XmlElement(name="IVRAuditHdrKey", namespace=ns)
+	@XmlElement(name="IVRAuditHdrKey")
 	public Integer IVRAuditHdrKey;
 	
-	@XmlElement(name="QMasterCallTypeKey", namespace=ns)
+	@XmlElement(name="QMasterCallTypeKey")
 	public Integer QMasterCallTypeKey;
 	
-	@XmlElement(name="QMasterExitKey", namespace=ns)
+	@XmlElement(name="QMasterExitKey")
 	public Integer QMasterExitKey;
 	
-	@XmlElement(name="QMasterScriptKey", namespace=ns)
+	@XmlElement(name="QMasterScriptKey")
 	public Integer QMasterScriptKey;
 	
-	@XmlElement(name="Queue", namespace=ns)
+	@XmlElement(name="Queue")
   public String Queue;
 	
-	@XmlElement(name="QMasterUsherScript", namespace=ns)
+	@XmlElement(name="QMasterUsherScript")
   public String QMasterUsherScript;
 }
 

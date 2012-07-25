@@ -11,40 +11,40 @@ public class CardInformation
 {
   private static final String ns = "http://service.heroku.greendot.org/";
   
-  @XmlElement(name="CardNumber", namespace=ns)
+  @XmlElement(name="CardNumber")
 	public String CardNumber;
 
-	@XmlElement(name="CCV", namespace=ns)
+	@XmlElement(name="CCV")
 	public String CCV;
 
-	@XmlElement(name="CohortKey", namespace=ns)
+	@XmlElement(name="CohortKey")
 	public Integer CohortKey;
 	
-	@XmlElement(name="Cohort", namespace=ns)
+	@XmlElement(name="Cohort")
 	public String Cohort;
 	
-	@XmlElement(name="FundingDelay", namespace=ns)
+	@XmlElement(name="FundingDelay")
 	public Integer FundingDelay;
 	
-	@XmlElement(name="MinorAge", namespace=ns)
+	@XmlElement(name="MinorAge")
 	public Integer MinorAge;
 	
-	@XmlElement(name="ProductKey", namespace=ns)
+	@XmlElement(name="ProductKey")
 	public Integer ProductKey;
 	
-	@XmlElement(name="ProductDescription", namespace=ns)
+	@XmlElement(name="ProductDescription")
 	public String ProductDescription;
 	
-	@XmlElement(name="PortfolioKey", namespace=ns)
+	@XmlElement(name="PortfolioKey")
 	public Integer PortfolioKey;
 	
-	@XmlElement(name="Portfolio", namespace=ns)
+	@XmlElement(name="Portfolio")
 	public String Portfolio;
 	
-	@XmlElement(name="PortfolioDescription", namespace=ns)
+	@XmlElement(name="PortfolioDescription")
 	public String PortfolioDescription;
 	
-	@XmlElement(name="RetailerKey", namespace=ns)
+	@XmlElement(name="RetailerKey")
 	public Integer RetailerKey;
 }
 
