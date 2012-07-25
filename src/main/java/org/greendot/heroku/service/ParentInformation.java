@@ -20,11 +20,13 @@ public class ParentInformation
 	@XmlElement(name="LastName")
 	public String LastName;
 	
-	@XmlElement(name="AddressList")
-	public List<Address> AddressList;
+	@XmlElementWrapper(name="AddressList")
+	@XmlElement(name="Address")
+	public List<Address> Address;
 	
-	@XmlElement(name="PhoneList")
-	public List<Phone> PhoneList;
+	@XmlElementWrapper(name="PhoneList")
+	@XmlElement(name="Phone")
+	public List<Phone> Phone;
 	
 	@XmlElement(name="SSN")
 	public String SSN;

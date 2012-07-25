@@ -434,7 +434,7 @@ public class GDWebServiceImp implements GDWebService {
       
       CustomerInformation customerinformation = new CustomerInformation();
       customerinformation.ACHReference = "ACHReference";
-      customerinformation.AddressList = addressList;
+      customerinformation.Address = addressList;
       customerinformation.DOB = new Date();
       customerinformation.Email = "test@test.com";
       customerinformation.FirstName = "FirstName";
@@ -443,7 +443,7 @@ public class GDWebServiceImp implements GDWebService {
       customerinformation.LanguagePreference = 1;
       customerinformation.LastName = "LastName";
       customerinformation.MiddleName = "MiddleName";
-      customerinformation.PhoneList = phoneList;
+      customerinformation.Phone = phoneList;
       customerinformation.SSN = "123456789";
       
      BankInformation bi = new BankInformation();
@@ -477,7 +477,7 @@ public class GDWebServiceImp implements GDWebService {
      ivr.Queue = "Activations";
      
      ParentInformation parentinformation = new ParentInformation();
-     parentinformation.AddressList = addressList;
+     parentinformation.Address = addressList;
      parentinformation.DOB = new Date();
      parentinformation.Email = "parent@email.com";
      parentinformation.FirstName="ParentFirst";
@@ -485,7 +485,7 @@ public class GDWebServiceImp implements GDWebService {
      parentinformation.LanguagePreference = 0;
      parentinformation.LastName="ParentLast";
      parentinformation.MiddleName="ParentMiddle";
-     parentinformation.PhoneList = phoneList;
+     parentinformation.Phone = phoneList;
      parentinformation.SSN = "098765432";
      
 		  ActivationInformation ai = new ActivationInformation();
@@ -619,7 +619,7 @@ public class GDWebServiceImp implements GDWebService {
      ivr.Queue = "Activations";
      
      ParentInformation parentinformation = new ParentInformation();
-     parentinformation.AddressList = addressList;
+     parentinformation.Address = addressList;
      parentinformation.DOB = new Date();
      parentinformation.Email = "parent@email.com";
      parentinformation.FirstName="ParentFirst";
@@ -627,7 +627,7 @@ public class GDWebServiceImp implements GDWebService {
      parentinformation.LanguagePreference = 0;
      parentinformation.LastName="ParentLast";
      parentinformation.MiddleName="ParentMiddle";
-     parentinformation.PhoneList = phoneList;
+     parentinformation.Phone = phoneList;
      parentinformation.SSN = "098765432";
      
       ActivationInformation ai = new ActivationInformation();
