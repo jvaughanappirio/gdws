@@ -1,12 +1,8 @@
 package org.greendot.heroku.service;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;  
 import javax.xml.bind.annotation.XmlElementWrapper;  
 import javax.xml.bind.annotation.XmlRootElement;  
-import javax.xml.bind.annotation.XmlType;
-
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;    
@@ -14,8 +10,6 @@ import java.util.List;
 @XmlRootElement(name="ParentInformation")
 public class ParentInformation
 {
-  
-  private static final String ns = "http://service.heroku.greendot.org/";
 	
 	@XmlElement(name="FirstName")
 	public String FirstName;

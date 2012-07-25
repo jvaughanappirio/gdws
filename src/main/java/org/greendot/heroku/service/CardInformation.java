@@ -1,23 +1,15 @@
 package org.greendot.heroku.service;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;  
 import javax.xml.bind.annotation.XmlElementWrapper;  
 import javax.xml.bind.annotation.XmlRootElement; 
-import javax.xml.bind.annotation.XmlType;
-
 import java.util.ArrayList;
 import java.util.List;
     
-
-@XmlRootElement(name = "CardInformation")
-
+@XmlRootElement(name="CardInformation")
 public class CardInformation
 {
-  private static final String ns = "http://service.heroku.greendot.org/";
-  
-  @XmlElement(name="CardNumber")
+	@XmlElement(name="CardNumber")
 	public String CardNumber;
 
 	@XmlElement(name="CCV")
