@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement()
+@XmlRootElement(name="Address")
 public class Address
 {	
 	private static final String ns = "http://service.heroku.greendot.org/";

@@ -11,9 +11,8 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;    
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement()
+
+@XmlRootElement(name="ActivationInformation")
 public class ActivationInformation
 {	
 	private static final String ns = "http://service.heroku.greendot.org/";
