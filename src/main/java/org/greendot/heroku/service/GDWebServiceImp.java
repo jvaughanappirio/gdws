@@ -516,7 +516,7 @@ public class GDWebServiceImp implements GDWebService {
 	}
 	
 	@WebMethod(operationName = "updateActivationInformation")
-  public ActivationInformation updateActivationInformation (@WebParam(name = "RegistrationToken") Integer RegistrationToken, @WebParam(name = "ProductKey") Integer ProductKey, @WebParam(name = "CustomerInformation", targetNamespace=tns) CustomerInformation CustomerInformation)
+  public ActivationInformation updateActivationInformation (@WebParam(name = "RegistrationToken") Integer RegistrationToken, @WebParam(name = "ProductKey") Integer ProductKey, @WebParam(name = "CustomerInformation", targetNamespace="http://service.heroku.greendot.org/") CustomerInformation CustomerInformation)
   {
 	  try {
       List<Upsell> upsellList = new ArrayList<Upsell>();
@@ -659,7 +659,7 @@ public class GDWebServiceImp implements GDWebService {
   }
 	
 	@WebMethod(operationName = "QASAddressCheck")
-  public QASResponse QASAddressCheck (@WebParam(name = "Address", targetNamespace=tns) org.greendot.heroku.service.Address address)
+  public QASResponse QASAddressCheck (@WebParam(name = "Address", targetNamespace="http://service.heroku.greendot.org/") Address address)
   {
     try {
       List<Address> addressList = new ArrayList<Address>();
@@ -694,6 +694,7 @@ public class GDWebServiceImp implements GDWebService {
       qas.MatchLevel = "StreetPartial";
       qas.ResponseCode = 0;
       qas.ResponseText = "ResponseText";
+      
       
       return qas;
       

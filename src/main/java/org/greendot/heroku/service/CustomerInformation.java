@@ -3,6 +3,9 @@ package org.greendot.heroku.service;
 import javax.xml.bind.annotation.XmlElement;  
 import javax.xml.bind.annotation.XmlElementWrapper;  
 import javax.xml.bind.annotation.XmlRootElement;  
+
+import com.sun.xml.txw2.annotation.XmlNamespace;
+
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;    
@@ -25,11 +28,11 @@ public class CustomerInformation
 	public String LastName;
 	
 	@XmlElementWrapper(name="AddresList")
-	@XmlElement(name="Address")
+	@XmlElement(name="Address", namespace=ns)
 	public List<Address> Address;
 	
 	@XmlElementWrapper(name="PhoneList")
-	@XmlElement(name="Phone")
+	@XmlElement(name="Phone", namespace=ns)
 	public List<Phone> Phone;
 	
 	@XmlElement(name="SSN")
